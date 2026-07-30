@@ -1,154 +1,97 @@
-/* ===========================
-   NAVBAR
-=========================== */
-
-.navbar{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
-    height:var(--navbar-height);
-
-    background:rgba(255,250,205,.82);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(0,0,0,.05);
-
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--navbar-height);
+  background: rgba(255, 250, 205, 0.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* ===========================
-   CONTAINER
-=========================== */
-
-.navbar-container{
-
-    height:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
+.navbar-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
+  width: 46px;
+  height: 46px;
   flex-shrink: 0;
-}
-/* ===========================
-   LOGO
-=========================== */
-
-.logo{
-
-    font-family:var(--font-heading);
-
-    font-size:2rem;
-
-    font-weight:600;
-
-    color:var(--primary);
-
-    letter-spacing:-0.5px;
-
+  object-fit: contain;
 }
 
-/* ===========================
-   NAVIGATION
-=========================== */
-
-.nav-links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:40px;
-
+.logo {
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
-.nav-links a{
-
-    position:relative;
-
-    font-family:var(--font-body);
-
-    font-size:15px;
-
-    font-weight:500;
-
-    color:var(--text);
-
-    transition:color .25s;
-
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 38px;
 }
 
-.nav-links a:hover{
-
-    color:var(--primary);
-
+.nav-links a {
+  position: relative;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  transition: color 0.25s;
 }
 
-.nav-links a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-6px;
-
-    width:0;
-
-    height:2px;
-
-    background:var(--primary);
-
-    transition:width .25s;
-
+.nav-links a:hover {
+  color: var(--primary);
 }
 
-.nav-links a:hover::after{
-
-    width:100%;
-
+.nav-links a::after {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  content: "";
+  background: var(--primary);
+  transition: width 0.25s;
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
-
-.nav-actions{
-
-    display:flex;
-
-    gap:12px;
-
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
 
-@media (max-width:992px){
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+}
 
-    .nav-links{
+@media (max-width: 600px) {
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
 
-        display:none;
+  .logo {
+    font-size: 1.7rem;
+  }
 
-    }
-
+  .nav-actions {
+    gap: 8px;
+  }
 }

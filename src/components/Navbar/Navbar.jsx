@@ -1,16 +1,13 @@
 import "./Navbar.css";
 import Button from "../Button/Button";
+import logoImage from "../../assets/images/logo.png";
 
 function Navbar() {
   return (
     <header className="navbar">
       <div className="container navbar-container">
         <a href="/" className="brand" aria-label="Giyotinin Eşiğinde ana sayfa">
-          <img
-            className="brand-logo"
-            src="/assets/images/logo.png"
-            alt=""
-          />
+          <img className="brand-logo" src={logoImage} alt="" />
           <span className="logo">Giyotinin Eşiğinde</span>
         </a>
 
