@@ -1,11 +1,12 @@
 import "./Home.css";
+
 import {
   FiBookOpen,
-  FiHeart,
   FiCompass,
   FiCpu,
   FiFeather,
   FiGlobe,
+  FiHeart,
   FiTrendingUp,
 } from "react-icons/fi";
 
@@ -49,64 +50,89 @@ function Home() {
       <main>
         <Hero />
 
-        <section className="categories-section" aria-label="Kategoriler">
+        <section
+          className="categories-section"
+          aria-labelledby="categories-title"
+        >
           <div className="container">
-            <div className="categories-list">
-              {categories.map((category) => (
-                <a
-                  className="category-item"
-                  href="/categories"
-                  key={category.name}
-                >
-                  <span className="category-name">{category.name}</span>
-                  <span className="category-count">{category.count}</span>
-                </a>
-              ))}
+            <div className="categories-heading">
+              <div>
+                <span className="section-eyebrow">Keşfet</span>
+                <h2 id="categories-title">İlgi Alanlarını Seç</h2>
+              </div>
 
-              <a className="category-item all-categories" href="/categories">
-                Tüm Kategoriler <span aria-hidden="true">→</span>
+              <a className="section-link" href="/categories">
+                Tüm kategoriler <span aria-hidden="true">→</span>
               </a>
+            </div>
+
+            <div className="categories-list">
+              {categories.map((category) => {
+                const Icon = category.icon;
+
+                return (
+                  <a
+                    className="category-item"
+                    href="/categories"
+                    key={category.name}
+                  >
+                    <span className="category-icon" aria-hidden="true">
+                      <Icon />
+                    </span>
+
+                    <span className="category-content">
+                      <span className="category-name">{category.name}</span>
+                      <span className="category-count">{category.count}</span>
+                    </span>
+
+                    <span className="category-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section className="categories-section" aria-labelledby="categories-title">
-  <div className="container">
-    <div className="categories-heading">
-      <div>
-        <span className="section-eyebrow">Keşfet</span>
-        <h2 id="categories-title">İlgi Alanlarını Seç</h2>
-      </div>
+        <section
+          className="announcements-section"
+          aria-labelledby="announcements-title"
+        >
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <span className="section-eyebrow">Gündem</span>
+                <h2 id="announcements-title">Duyurular</h2>
+              </div>
 
-      <a className="section-link" href="/categories">
-        Tüm kategoriler <span aria-hidden="true">→</span>
-      </a>
-    </div>
+              <a className="section-link" href="/announcements">
+                Tümünü Gör <span aria-hidden="true">→</span>
+              </a>
+            </div>
 
-    <div className="categories-list">
-      {categories.map((category) => {
-        const Icon = category.icon;
+            <div className="announcements-grid">
+              {announcements.map((announcement) => (
+                <a
+                  className="announcement-card"
+                  href="/announcements"
+                  key={announcement.title}
+                >
+                  <div className="announcement-meta">
+                    <span>{announcement.category}</span>
+                    <time>{announcement.date}</time>
+                  </div>
 
-        return (
-          <a className="category-item" href="/categories" key={category.name}>
-            <span className="category-icon" aria-hidden="true">
-              <Icon />
-            </span>
+                  <h3>{announcement.title}</h3>
 
-            <span className="category-content">
-              <span className="category-name">{category.name}</span>
-              <span className="category-count">{category.count}</span>
-            </span>
-
-            <span className="category-arrow" aria-hidden="true">
-              →
-            </span>
-          </a>
-        );
-      })}
-    </div>
-  </div>
-</section>
+                  <span className="announcement-link">
+                    Duyuruyu oku <span aria-hidden="true">→</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -80,7 +80,7 @@
 .category-name {
   color: var(--text);
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-weight: 600;
 }
 
@@ -192,5 +192,8 @@
 
   .announcement-card h3 {
     font-size: 1.4rem;
+  }
+  .category-name {
+    font-size: 1.35rem;
   }
 }
