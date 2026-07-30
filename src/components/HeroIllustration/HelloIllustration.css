@@ -1,0 +1,103 @@
+.hero-illustration {
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* SVG'nin biraz daha canlı görünmesi */
+
+.hero-svg #blade {
+    transition: transform .15s linear;
+    transform-origin: center;
+}
+
+.hero-svg rect,
+.hero-svg path,
+.hero-svg polygon,
+.hero-svg circle,
+.hero-svg ellipse {
+    vector-effect: non-scaling-stroke;
+}
+
+/* Hover */
+
+.hero-illustration:hover #blade {
+    transform: translateY(6px);
+}
+
+/* Kitap */
+
+.hero-svg g:last-of-type {
+    transition: transform .35s ease;
+}
+
+.hero-illustration:hover g:last-of-type {
+    transform: translateY(-2px);
+}
+
+/* Sayfalar */
+
+.hero-svg rect[transform] {
+    transition: transform .5s ease;
+}
+
+.hero-illustration:hover rect[transform] {
+    transform: translateY(-6px) rotate(-8deg);
+}
+
+/* Hafif yukarı aşağı hareket */
+
+@keyframes float {
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    .hero-illustration{
+        max-width:520px;
+    }
+
+}
+
+/* Telefon */
+
+@media (max-width:768px){
+
+    .hero-illustration{
+
+        max-width:420px;
+        margin-inline:auto;
+
+    }
+
+    .hero-svg{
+
+        animation:none;
+
+    }
+
+}

@@ -1,0 +1,165 @@
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+    width: min(var(--container-width), calc(100% - 64px));
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.section {
+    padding: var(--space-8) 0;
+}
+
+.section-sm {
+    padding: var(--space-6) 0;
+}
+
+.section-lg {
+    padding: 8rem 0;
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+}
+
+
+/* ==========================================
+   FLEX
+========================================== */
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==========================================
+   WIDTH
+========================================== */
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/* ==========================================
+   SPACING HELPERS
+========================================== */
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .container {
+        width: min(100%, calc(100% - 48px));
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .grid-3,
+    .grid-2,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: var(--space-6) 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: min(100%, calc(100% - 32px));
+    }
+
+}

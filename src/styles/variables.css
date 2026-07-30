@@ -1,0 +1,92 @@
+:root {
+
+    /* ==========================================
+       COLORS
+    ========================================== */
+
+    --background: #FFFACD;
+    --surface: #FFFDF1;
+    --surface-alt: #F8F2D6;
+
+    --primary: #171717;
+    --secondary: #2E2E2E;
+
+    --text: #1F1F1F;
+    --text-light: #5F5F5F;
+    --text-muted: #8B8B8B;
+
+    --border: #E6DEB5;
+    --white: #FFFFFF;
+
+    --success: #3C8C5A;
+    --warning: #D39A2D;
+    --danger: #C44536;
+
+
+    /* ==========================================
+       TYPOGRAPHY
+    ========================================== */
+
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
+
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-md: 1rem;         /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+
+    --line-height: 1.7;
+
+
+    /* ==========================================
+       SPACING (8px System)
+    ========================================== */
+
+    --space-1: 0.5rem;      /* 8px */
+    --space-2: 1rem;        /* 16px */
+    --space-3: 1.5rem;      /* 24px */
+    --space-4: 2rem;        /* 32px */
+    --space-5: 3rem;        /* 48px */
+    --space-6: 4rem;        /* 64px */
+    --space-7: 5rem;        /* 80px */
+    --space-8: 6rem;        /* 96px */
+
+
+    /* ==========================================
+       BORDER RADIUS
+    ========================================== */
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
+
+
+    /* ==========================================
+       SHADOWS
+    ========================================== */
+
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.12);
+
+
+    /* ==========================================
+       TRANSITIONS
+    ========================================== */
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+
+    /* ==========================================
+       LAYOUT
+    ========================================== */
+
+    --container-width: 1400px;
+    --navbar-height: 90px;
+
+}

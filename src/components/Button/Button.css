@@ -1,0 +1,83 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-family: var(--font-body);
+    font-weight: 600;
+
+    transition: all var(--transition-normal);
+
+    user-select: none;
+}
+
+/* ===========================
+   Sizes
+=========================== */
+
+.btn-sm {
+    height: 42px;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+}
+
+.btn-md {
+    height: 54px;
+    padding: 0 28px;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.btn-lg {
+    height: 60px;
+    padding: 0 36px;
+    font-size: 1.05rem;
+    border-radius: var(--radius-md);
+}
+
+/* ===========================
+   Primary
+=========================== */
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #2d2d2d;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===========================
+   Secondary
+=========================== */
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ===========================
+   Disabled
+=========================== */
+
+.btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
