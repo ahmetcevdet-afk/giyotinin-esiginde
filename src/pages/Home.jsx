@@ -42,10 +42,13 @@ const announcements = [
   },
 ];
 
-function Home() {
+function Home({ theme, setTheme }) {
   return (
     <>
-      <Navbar />
+      <Navbar
+  theme={theme}
+  setTheme={setTheme}
+/>
 
       <main>
         <Hero />

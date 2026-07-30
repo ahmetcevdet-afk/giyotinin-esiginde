@@ -90,3 +90,24 @@
     --navbar-height: 90px;
 
 }
+:root.dark {
+
+    --background: #111111;
+    --surface: #1B1B1B;
+    --surface-alt: #242424;
+
+    --primary: #FFFACD;
+    --secondary: #F5EAB4;
+
+    --text: #F8F5E8;
+    --text-light: #CFC8A5;
+    --text-muted: #A69F87;
+
+    --border: #343434;
+
+    --white: #FFFFFF;
+
+    --success: #6FCF97;
+    --warning: #F2C94C;
+    --danger: #EB5757;
+}

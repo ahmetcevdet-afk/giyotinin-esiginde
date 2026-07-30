@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 import "./Navbar.css";
 import Button from "../Button/Button";
-import logoImage from "../../assets/images/logo.png";
 
-function Navbar() {
+import logoLight from "../../assets/images/logo-light.png";
+import logoDark from "../../assets/images/logo-dark.png";
+
+function Navbar({ theme, setTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const currentLogo = theme === "dark" ? logoDark : logoLight;
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -18,11 +21,14 @@ function Navbar() {
     };
   }, [menuOpen]);
 
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <>
       <header className="navbar">
         <div className="container navbar-container">
-          {/* Logo */}
 
           <a
             href="/"
@@ -31,17 +37,15 @@ function Navbar() {
             onClick={closeMenu}
           >
             <img
-              src={logoImage}
-              alt="Giyotinin Eşiğinde"
-              className="brand-logo"
-            />
+  src={currentLogo}
+  alt="Giyotinin Eşiğinde"
+  className="brand-logo"
+/>
 
             <span className="logo">
               Giyotinin Eşiğinde
             </span>
           </a>
-
-          {/* Desktop Menü */}
 
           <nav className="nav-links">
             <a href="/">Ana Sayfa</a>
@@ -51,9 +55,19 @@ function Navbar() {
             <a href="/about">Hakkımızda</a>
           </nav>
 
-          {/* Desktop Butonlar */}
-
           <div className="nav-actions">
+
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Tema Değiştir"
+            >
+              {theme === "light"
+                ? <Moon size={18}/>
+                : <Sun size={18}/>
+              }
+            </button>
+
             <Button variant="secondary" size="sm">
               Giriş Yap
             </Button>
@@ -61,34 +75,30 @@ function Navbar() {
             <Button size="sm">
               Kayıt Ol
             </Button>
-          </div>
 
-          {/* Hamburger */}
+          </div>
 
           <button
             className="hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menüyü Aç"
           >
-            {menuOpen ? (
-              <X size={28} />
-            ) : (
-              <Menu size={28} />
-            )}
+            {menuOpen
+              ? <X size={28}/>
+              : <Menu size={28}/>
+            }
           </button>
+
         </div>
       </header>
-
-      {/* Overlay */}
 
       <div
         className={`overlay ${menuOpen ? "show" : ""}`}
         onClick={closeMenu}
       />
 
-      {/* Mobil Menü */}
-
       <aside className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+
         <a href="/" onClick={closeMenu}>
           Ana Sayfa
         </a>
@@ -109,7 +119,28 @@ function Navbar() {
           Hakkımızda
         </a>
 
+        <button
+          className="theme-toggle mobile-theme"
+          onClick={toggleTheme}
+        >
+          {theme === "light"
+            ? (
+              <>
+                <Moon size={18}/>
+                Koyu Tema
+              </>
+            )
+            : (
+              <>
+                <Sun size={18}/>
+                Açık Tema
+              </>
+            )
+          }
+        </button>
+
         <div className="mobile-buttons">
+
           <Button variant="secondary">
             Giriş Yap
           </Button>
@@ -117,8 +148,11 @@ function Navbar() {
           <Button>
             Kayıt Ol
           </Button>
+
         </div>
+
       </aside>
+
     </>
   );
 }
