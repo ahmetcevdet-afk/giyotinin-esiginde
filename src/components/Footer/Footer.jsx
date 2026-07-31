@@ -12,56 +12,112 @@ import {
 } from "react-icons/fa6";
 
 function Footer({ theme }) {
-  const currentLogo = theme === "dark" ? logoDark : logoLight;
+  const currentLogo =
+    theme === "dark"
+      ? logoDark
+      : logoLight;
 
   return (
     <footer className="footer">
+
+      {/* ================= CTA ================= */}
+
       <div className="footer-cta">
 
-  <div className="footer-cta-content">
+        <div className="footer-cta-content">
 
-    <span className="footer-cta-badge">
-      📖 Akademik Yayın Platformu
-    </span>
+          <span className="footer-cta-badge">
+            📖 Bağımsız Akademik Yayın Platformu
+          </span>
 
-    <h2>
-      Bilginizi paylaşmaya hazır mısınız?
-    </h2>
+          <h2>
+            Bilginizi paylaşmaya hazır mısınız?
+          </h2>
 
-    <p>
-      Araştırmalarınızı, makalelerinizi ve özgün fikirlerinizi
-      binlerce okuyucu ile buluşturun.
-    </p>
+          <p>
+            Araştırmalarınızı, makalelerinizi ve özgün
+            fikirlerinizi dünyanın dört bir yanındaki
+            okuyucularla buluşturun.
+          </p>
 
-  </div>
+        </div>
 
-  <div className="footer-cta-actions">
+        <div className="footer-cta-side">
 
-    <a
-      href="/submit"
-      className="footer-cta-primary"
-    >
-      Makale Gönder
-    </a>
+          <div className="footer-feature">
 
-    <a
-      href="/about"
-      className="footer-cta-secondary"
-    >
-      Daha Fazla Bilgi
-    </a>
+            <span>✓</span>
 
-  </div>
+            <div>
 
-</div>
+              <strong>Açık Erişim</strong>
+
+              <small>
+                Herkes tarafından ücretsiz okunabilir.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div className="footer-feature">
+
+            <span>✓</span>
+
+            <div>
+
+              <strong>Editöryel Değerlendirme</strong>
+
+              <small>
+                Yayın öncesi kalite kontrolü.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div className="footer-feature">
+
+            <span>✓</span>
+
+            <div>
+
+              <strong>Kalıcı Dijital Arşiv</strong>
+
+              <small>
+                Çalışmalarınız uzun yıllar erişilebilir kalır.
+              </small>
+
+            </div>
+
+          </div>
+
+          <a
+            href="/submit"
+            className="footer-cta-primary"
+          >
+            Makale Gönder →
+          </a>
+
+        </div>
+
+      </div>
+
+      {/* ================= Footer ================= */}
+
       <div className="container footer-container">
 
         <div className="footer-grid">
 
-          {/* Sol */}
+          {/* Brand */}
+
           <div className="footer-brand-column">
 
-            <a href="/" className="footer-brand">
+            <a
+              href="/"
+              className="footer-brand"
+            >
+
               <img
                 src={currentLogo}
                 alt="Giyotinin Eşiğinde"
@@ -69,18 +125,37 @@ function Footer({ theme }) {
               />
 
               <div>
-                <h3>Giyotinin Eşiğinde</h3>
+
+                <h3>
+                  Giyotinin Eşiğinde
+                </h3>
 
                 <p className="footer-slogan">
-                  Fikirler yargılanır, insanlar değil.
+                  Fikirler yargılanır,
+                  insanlar değil.
                 </p>
+
               </div>
+
             </a>
 
             <p className="footer-description">
-              Bağımsız akademik yayın platformu. Araştırmaların, makalelerin,
-              denemelerin ve özgün fikirlerin yayımlandığı dijital bir ortam.
+              Bağımsız akademik yayın platformu.
+              Araştırmaların, makalelerin,
+              incelemelerin ve özgün fikirlerin
+              yayımlandığı modern dijital ortam.
             </p>
+
+            <div className="footer-status">
+
+              <span className="status-dot" />
+
+              <p>
+                Açık erişimli akademik yayın
+                platformu
+              </p>
+
+            </div>
 
             <div className="footer-socials">
 
@@ -119,26 +194,55 @@ function Footer({ theme }) {
 
           <div className="footer-column">
 
-            <h4>Platform</h4>
+            <h4>
+              Platform
+            </h4>
 
-            <a href="/">Ana Sayfa</a>
-            <a href="/articles">Araştırmalar</a>
-            <a href="/categories">Kategoriler</a>
-            <a href="/authors">Yazarlar</a>
-            <a href="/about">Hakkımızda</a>
+            <a href="/">
+              Ana Sayfa
+            </a>
+
+            <a href="/articles">
+              Araştırmalar
+            </a>
+
+            <a href="/categories">
+              Kategoriler
+            </a>
+
+            <a href="/authors">
+              Yazarlar
+            </a>
+
+            <a href="/about">
+              Hakkımızda
+            </a>
 
           </div>
 
-          {/* Yasal */}
+          {/* Kaynaklar */}
 
           <div className="footer-column">
 
-            <h4>Yasal</h4>
+            <h4>
+              Kaynaklar
+            </h4>
 
-            <a href="/terms">Kullanım Koşulları</a>
-            <a href="/privacy">Gizlilik Politikası</a>
-            <a href="/cookies">Çerez Politikası</a>
-            <a href="/publishing">Yayın İlkeleri</a>
+            <a href="/publishing">
+              Yayın İlkeleri
+            </a>
+
+            <a href="/terms">
+              Kullanım Koşulları
+            </a>
+
+            <a href="/privacy">
+              Gizlilik Politikası
+            </a>
+
+            <a href="/cookies">
+              Çerez Politikası
+            </a>
 
           </div>
 
@@ -146,16 +250,28 @@ function Footer({ theme }) {
 
           <div className="footer-column">
 
-            <h4>İletişim</h4>
+            <h4>
+              İletişim
+            </h4>
 
             <p>
+
               <Mail size={16} />
-              info@giyotininesiginde.com
+
+              <span>
+                info@giyotininesiginde.com
+              </span>
+
             </p>
 
             <p>
+
               <Scale size={16} />
-              legal@giyotininesiginde.com
+
+              <span>
+                legal@giyotininesiginde.com
+              </span>
+
             </p>
 
           </div>
@@ -167,7 +283,8 @@ function Footer({ theme }) {
         <div className="footer-bottom">
 
           <span>
-            © 2026 Giyotinin Eşiğinde. Tüm hakları saklıdır.
+            © 2026 Giyotinin Eşiğinde.
+            Tüm hakları saklıdır.
           </span>
 
           <span>
@@ -177,6 +294,7 @@ function Footer({ theme }) {
         </div>
 
       </div>
+
     </footer>
   );
 }
