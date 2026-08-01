@@ -1,0 +1,180 @@
+.user-menu {
+    position: relative;
+}
+
+.user-trigger {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    padding: .35rem .5rem;
+
+    border-radius: var(--radius-full);
+
+    transition: var(--transition-fast);
+}
+
+.user-trigger:hover {
+    background: rgba(0,0,0,.05);
+}
+
+.dark .user-trigger:hover {
+    background: rgba(255,255,255,.08);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: var(--background);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: .9rem;
+
+    user-select: none;
+}
+
+.user-avatar.large {
+    width: 48px;
+    height: 48px;
+}
+
+.user-dropdown {
+
+    position: absolute;
+
+    top: calc(100% + 14px);
+    right: 0;
+
+    width: 280px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-lg);
+
+    overflow: hidden;
+
+    z-index: 999;
+
+    animation: dropdown .18s ease;
+
+}
+
+@keyframes dropdown {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(-10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+.user-info {
+
+    display: flex;
+    gap: 1rem;
+
+    padding: 1.2rem;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.user-info div:last-child {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.user-info strong {
+
+    font-size: .95rem;
+
+}
+
+.user-info span {
+
+    font-size: .8rem;
+
+    color: var(--text-light);
+
+    word-break: break-all;
+
+    margin-top: .25rem;
+
+}
+
+.user-dropdown a,
+.logout-btn {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    padding: .9rem 1.2rem;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: .95rem;
+
+    transition: background .2s ease;
+
+}
+
+.user-dropdown a:hover,
+.logout-btn:hover {
+
+    background: rgba(0,0,0,.05);
+
+}
+
+.dark .user-dropdown a:hover,
+.dark .logout-btn:hover {
+
+    background: rgba(255,255,255,.08);
+
+}
+
+.logout-btn {
+
+    border-top: 1px solid var(--border);
+
+    color: var(--danger);
+
+}

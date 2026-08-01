@@ -1,40 +1,15 @@
-import { useState } from "react";
-import { supabase } from "../lib/supabase";
+import AuthLayout from "../components/Auth/AuthLayout";
+import LoginForm from "../components/Auth/LoginForm";
 
-export default function Login() {
-
-  const [email,setEmail]=useState("");
-  const [password,setPassword]=useState("");
-
-  async function login(){
-
-    const {error}=await supabase.auth.signInWithPassword({
-      email,
-      password
-    });
-
-    if(error){
-      alert(error.message);
-    }
-
-  }
-
-  return(
-    <>
-      <input
-        onChange={(e)=>setEmail(e.target.value)}
-        placeholder="Email"
-      />
-
-      <input
-        type="password"
-        onChange={(e)=>setPassword(e.target.value)}
-        placeholder="Şifre"
-      />
-
-      <button onClick={login}>
-        Giriş Yap
-      </button>
-    </>
-  )
+function Login({ theme, setTheme }) {
+  return (
+    <AuthLayout
+      theme={theme}
+      setTheme={setTheme}
+    >
+      <LoginForm />
+    </AuthLayout>
+  );
 }
+
+export default Login;
