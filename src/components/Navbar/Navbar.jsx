@@ -1,5 +1,15 @@
   import { useState, useEffect } from "react";
-  import { Menu, X, Moon, Sun } from "lucide-react";
+  import {
+  Menu,
+  X,
+  Moon,
+  Sun,
+  LayoutDashboard,
+  User,
+  FileText,
+  Bookmark,
+  LogOut,
+} from "lucide-react";
   import { Link } from "react-router-dom";
   import { useAuth } from "../../contexts/AuthContext";
   import UserMenu from "./UserMenu";
@@ -14,6 +24,21 @@
     const [menuOpen, setMenuOpen] = useState(false);
     const currentLogo = theme === "dark" ? logoDark : logoLight;
     const { user, logout } = useAuth();
+    const username =
+  user?.user_metadata?.username ||
+  user?.email?.split("@")[0] ||
+  "";
+
+const fullName =
+  user?.user_metadata?.full_name ||
+  username;
+
+const initials = fullName
+  .split(" ")
+  .map(word => word[0])
+  .join("")
+  .substring(0, 2)
+  .toUpperCase();
     
 
 console.log("Navbar user:", user);
@@ -167,14 +192,83 @@ console.log("Navbar user:", user);
 
   {user ? (
 
-    <Button
-      onClick={() => {
-        logout();
-        closeMenu();
-      }}
-    >
-      Çıkış Yap
-    </Button>
+    <>
+
+      <div className="mobile-user-card">
+
+        <div className="mobile-user-avatar">
+
+          {initials}
+
+        </div>
+
+        <div>
+
+          <strong>
+
+            {fullName}
+
+          </strong>
+
+          <span>
+
+            @{username}
+
+          </span>
+
+        </div>
+
+      </div>
+
+      <Link
+        to="/dashboard"
+        onClick={closeMenu}
+        className="mobile-user-link"
+      >
+        <LayoutDashboard size={18} />
+        Dashboard
+      </Link>
+
+      <Link
+        to="/profile"
+        onClick={closeMenu}
+        className="mobile-user-link"
+      >
+        <User size={18} />
+        Profil
+      </Link>
+
+      <Link
+        to="/my-pages"
+        onClick={closeMenu}
+        className="mobile-user-link"
+      >
+        <FileText size={18} />
+        Yazılarım
+      </Link>
+
+      <Link
+        to="/saved"
+        onClick={closeMenu}
+        className="mobile-user-link"
+      >
+        <Bookmark size={18} />
+        Kaydedilenler
+      </Link>
+
+      <Button
+       className="logout-btn-mobile"
+        onClick={async () => {
+          await logout();
+          closeMenu();
+        }}
+      >
+        <LogOut size={18} />
+
+        Çıkış Yap
+      </Button>
+
+    </>
 
   ) : (
 
