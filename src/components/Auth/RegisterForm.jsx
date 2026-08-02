@@ -252,7 +252,7 @@ function RegisterForm() {
 
                         <Link
                             to="/terms"
-                            target="_blank"
+                            
                         >
                             Kullanım Koşulları
                         </Link>
@@ -261,7 +261,7 @@ function RegisterForm() {
 
                         <Link
                             to="/privacy"
-                            target="_blank"
+                            
                         >
                             Gizlilik Politikası
                         </Link>
