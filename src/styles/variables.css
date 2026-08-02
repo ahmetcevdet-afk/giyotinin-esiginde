@@ -111,3 +111,32 @@
     --warning: #F2C94C;
     --danger: #EB5757;
 }
+html{
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+body{
+
+    margin:0;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+
+}
+
+#root{
+
+    min-height:100vh;
+
+    background:var(--background);
+
+}

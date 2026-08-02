@@ -1,0 +1,243 @@
+/* ==========================================
+   MOBILE DRAWER
+========================================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:0;
+
+    right:-340px;
+
+    width:320px;
+
+    max-width:85vw;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:96px 26px 28px;
+
+    background:var(--background);
+
+    border-left:1px solid var(--border);
+
+    box-shadow:var(--shadow-lg);
+
+    overflow-y:auto;
+
+    transition:right .35s ease;
+
+    z-index:999;
+
+}
+
+.mobile-menu.open{
+
+    right:0;
+
+}
+
+/* ==========================================
+   SECTION TITLES
+========================================== */
+
+.mobile-section-title{
+
+    margin:24px 0 10px;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.mobile-user-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 6px;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    border-bottom:1px solid var(--border);
+
+    transition:all .25s ease;
+
+}
+
+.mobile-user-link svg{
+
+    width:18px;
+
+    height:18px;
+
+    flex-shrink:0;
+
+}
+
+.mobile-user-link:hover{
+
+    color:var(--accent);
+
+    padding-left:12px;
+
+}
+
+/* ==========================================
+   MOBILE THEME
+========================================== */
+
+.theme-toggle.mobile-theme{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 18px;
+
+    margin-top:8px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.theme-toggle.mobile-theme:hover{
+
+    background:var(--surface-alt);
+
+    border-color:var(--accent);
+
+}
+
+.theme-toggle.mobile-theme svg{
+
+    width:20px;
+
+    height:20px;
+
+    flex-shrink:0;
+
+}
+
+.theme-toggle.mobile-theme span{
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+}
+
+/* ==========================================
+   BUTTON AREA
+========================================== */
+
+.mobile-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:auto;
+
+    padding-top:28px;
+
+}
+
+.mobile-buttons .button{
+
+    width:100%;
+
+}
+
+.logout-btn-mobile{
+
+    margin-top:6px;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.mobile-menu::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.mobile-menu::-webkit-scrollbar-thumb{
+
+    background:var(--border);
+
+    border-radius:999px;
+
+}
+
+.mobile-menu::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:600px){
+
+    .mobile-menu{
+
+        width:290px;
+
+        padding:88px 22px 24px;
+
+    }
+
+}
+
+@media (max-width:400px){
+
+    .mobile-menu{
+
+        width:260px;
+
+    }
+
+}
