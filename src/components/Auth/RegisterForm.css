@@ -1,0 +1,107 @@
+.register-form-container{
+
+    width:100%;
+
+}
+
+.register-header{
+
+    margin-bottom:2rem;
+
+}
+
+.register-header h2{
+
+    font-family:var(--font-heading);
+
+    font-size:2.2rem;
+
+    margin-bottom:.5rem;
+
+}
+
+.register-header p{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+}
+
+.register-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.25rem;
+
+}
+
+.terms-checkbox{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.75rem;
+
+    cursor:pointer;
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+    line-height:1.6;
+
+}
+
+.terms-checkbox input{
+
+    margin-top:4px;
+
+}
+
+.register-error{
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:rgba(196,69,54,.12);
+
+    border:1px solid rgba(196,69,54,.2);
+
+    color:var(--danger);
+
+    font-size:.92rem;
+
+}
+
+.register-footer{
+
+    margin-top:2rem;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+}
+
+.register-footer a{
+
+    margin-left:.35rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    text-decoration:none;
+
+}
+
+.register-footer a:hover{
+
+    text-decoration:underline;
+
+}

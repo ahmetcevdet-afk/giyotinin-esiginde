@@ -17,6 +17,9 @@ import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import EmailConfirmed from "./pages/EmailConfirmed";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -67,11 +70,23 @@ function App() {
               </ProtectedRoute>
             }
           />
-
+          <Route
+          path="/email-confirmed"
+          element={<EmailConfirmed/>}
+          />
           <Route
             path="*"
             element={<NotFound {...pageProps} />}
           />
+          <Route
+    path="/privacy"
+    element={<PrivacyPolicy />}
+/>
+
+<Route
+    path="/terms"
+    element={<Terms />}
+/>
 
         </Routes>
 
