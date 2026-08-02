@@ -1,5 +1,6 @@
 import "./Home.css";
 
+
 import {
   FiBookOpen,
   FiCompass,
@@ -13,6 +14,7 @@ import {
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import Footer from "../components/Footer/Footer";
+import CTA from "../components/CTA/CTA"; 
 
 const categories = [
   { name: "Siyaset", count: "412 araştırma", icon: FiGlobe },
@@ -137,7 +139,7 @@ function Home({ theme, setTheme }) {
           </div>
         </section>
       </main>
-
+      <CTA />
       <Footer />
     </>
   );

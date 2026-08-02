@@ -52,6 +52,7 @@ const initials = username
             <button
                 className="user-trigger"
                 onClick={() => setOpen(!open)}
+                aria-label="Kullanıcı Menüsü"
             >
 
                 <div className="user-avatar">
@@ -60,7 +61,10 @@ const initials = username
 
                 </div>
 
-                <ChevronDown size={18} />
+                <ChevronDown
+                  size={18}
+                   className={`user-arrow ${open ? "open" : ""}`}
+                      />
 
             </button>
 
@@ -88,29 +92,37 @@ const initials = username
 
                     </div>
 
-                    <Link to="/dashboard">
+                    <Link 
+                    to="/dashboard"
+                    onClick={() => setOpen(false)}>
                         <LayoutDashboard size={18}/>
                         Dashboard
                     </Link>
 
-                    <Link to="/profile">
+                    <Link to="/profile"
+                    onClick={() => setOpen(false)}>
                         <User size={18}/>
                         Profil
                     </Link>
 
-                    <Link to="/my-articles">
+                    <Link to="/my-pages"
+                    onClick={() => setOpen(false)}>
                         <FileText size={18}/>
-                        Makalelerim
+                        Yazılarım
                     </Link>
 
-                    <Link to="/saved">
+                    <Link to="/saved"
+                    onClick={() => setOpen(false)}>
                         <Bookmark size={18}/>
                         Kaydedilenler
                     </Link>
 
                     <button
                         className="logout-btn"
-                        onClick={logout}
+                        onClick={async () => {
+                            setOpen(false)
+                            await logout();
+                        }}
                     >
 
                         <LogOut size={18}/>

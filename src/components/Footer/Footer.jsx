@@ -20,91 +20,6 @@ function Footer({ theme }) {
   return (
     <footer className="footer">
 
-      {/* ================= CTA ================= */}
-
-      <div className="footer-cta">
-
-        <div className="footer-cta-content">
-
-          <span className="footer-cta-badge">
-            📖 Bağımsız Akademik Yayın Platformu
-          </span>
-
-          <h2>
-            Bilginizi paylaşmaya hazır mısınız?
-          </h2>
-
-          <p>
-            Araştırmalarınızı, makalelerinizi ve özgün
-            fikirlerinizi dünyanın dört bir yanındaki
-            okuyucularla buluşturun.
-          </p>
-
-        </div>
-
-        <div className="footer-cta-side">
-
-          <div className="footer-feature">
-
-            <span>✓</span>
-
-            <div>
-
-              <strong>Açık Erişim</strong>
-
-              <small>
-                Herkes tarafından ücretsiz okunabilir.
-              </small>
-
-            </div>
-
-          </div>
-
-          <div className="footer-feature">
-
-            <span>✓</span>
-
-            <div>
-
-              <strong>Editöryel Değerlendirme</strong>
-
-              <small>
-                Yayın öncesi kalite kontrolü.
-              </small>
-
-            </div>
-
-          </div>
-
-          <div className="footer-feature">
-
-            <span>✓</span>
-
-            <div>
-
-              <strong>Kalıcı Dijital Arşiv</strong>
-
-              <small>
-                Çalışmalarınız uzun yıllar erişilebilir kalır.
-              </small>
-
-            </div>
-
-          </div>
-
-          <a
-            href="/submit"
-            className="footer-cta-primary"
-          >
-            Makale Gönder →
-          </a>
-
-        </div>
-
-      </div>
-
-      {/* ================= Footer ================= */}
-
       <div className="container footer-container">
 
         <div className="footer-grid">
@@ -151,8 +66,7 @@ function Footer({ theme }) {
               <span className="status-dot" />
 
               <p>
-                Açık erişimli akademik yayın
-                platformu
+                Açık erişimli akademik yayın platformu
               </p>
 
             </div>
@@ -194,29 +108,17 @@ function Footer({ theme }) {
 
           <div className="footer-column">
 
-            <h4>
-              Platform
-            </h4>
+            <h4>Platform</h4>
 
-            <a href="/">
-              Ana Sayfa
-            </a>
+            <a href="/">Ana Sayfa</a>
 
-            <a href="/articles">
-              Araştırmalar
-            </a>
+            <a href="/articles">Araştırmalar</a>
 
-            <a href="/categories">
-              Kategoriler
-            </a>
+            <a href="/categories">Kategoriler</a>
 
-            <a href="/authors">
-              Yazarlar
-            </a>
+            <a href="/authors">Yazarlar</a>
 
-            <a href="/about">
-              Hakkımızda
-            </a>
+            <a href="/about">Hakkımızda</a>
 
           </div>
 
@@ -224,9 +126,7 @@ function Footer({ theme }) {
 
           <div className="footer-column">
 
-            <h4>
-              Kaynaklar
-            </h4>
+            <h4>Kaynaklar</h4>
 
             <a href="/publishing">
               Yayın İlkeleri
@@ -250,9 +150,7 @@ function Footer({ theme }) {
 
           <div className="footer-column">
 
-            <h4>
-              İletişim
-            </h4>
+            <h4>İletişim</h4>
 
             <p>
 
