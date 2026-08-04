@@ -9,41 +9,34 @@ import "./ProfileStats.css";
 
 function ProfileStats({
 
-    stats = {
-
-        articles: 0,
-        views: 0,
-        saves: 0,
-        followers: 0,
-
-    },
+    profile,
 
 }) {
 
-    const items = [
+    const stats = [
 
         {
             icon: FileText,
             label: "Yayın",
-            value: stats.articles,
+            value: profile?.articles_count ?? 0,
         },
 
         {
             icon: Eye,
             label: "Okunma",
-            value: stats.views,
+            value: profile?.views_count ?? 0,
         },
 
         {
             icon: Bookmark,
             label: "Kaydedilme",
-            value: stats.saves,
+            value: profile?.saves_count ?? 0,
         },
 
         {
             icon: Users,
             label: "Takipçi",
-            value: stats.followers,
+            value: profile?.followers_count ?? 0,
         },
 
     ];
@@ -52,38 +45,42 @@ function ProfileStats({
 
         <section className="profile-stats">
 
-            {items.map((item) => {
+            {
 
-                const Icon = item.icon;
+                stats.map((item) => {
 
-                return (
+                    const Icon = item.icon;
 
-                    <div
-                        key={item.label}
-                        className="stat-card"
-                    >
+                    return (
 
-                        <Icon
-                            size={22}
-                        />
+                        <div
+                            key={item.label}
+                            className="stat-card"
+                        >
 
-                        <h3>
+                            <Icon
+                                size={22}
+                            />
 
-                            {item.value}
+                            <h3>
 
-                        </h3>
+                                {Number(item.value).toLocaleString("tr-TR")}
 
-                        <span>
+                            </h3>
 
-                            {item.label}
+                            <span>
 
-                        </span>
+                                {item.label}
 
-                    </div>
+                            </span>
 
-                );
+                        </div>
 
-            })}
+                    );
+
+                })
+
+            }
 
         </section>
 
