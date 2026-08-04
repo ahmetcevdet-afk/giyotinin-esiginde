@@ -9,27 +9,74 @@ import "./ProfileLinks.css";
 
 function ProfileLinks({ profile }) {
 
+    function normalizeUrl(type, value) {
+
+        if (!value) return "";
+
+        const trimmed = value.trim();
+
+        switch (type) {
+
+            case "website":
+
+                return /^https?:\/\//i.test(trimmed)
+
+                    ? trimmed
+
+                    : `https://${trimmed}`;
+
+            case "linkedin":
+
+                return /^https?:\/\//i.test(trimmed)
+
+                    ? trimmed
+
+                    : `https://${trimmed}`;
+
+            case "orcid": {
+
+                const orcid = trimmed
+                    .replace(/^https?:\/\/orcid\.org\//i, "");
+
+                return `https://orcid.org/${orcid}`;
+
+            }
+
+            default:
+
+                return trimmed;
+
+        }
+
+    }
+
     const links = [
 
         {
+            type: "website",
             icon: Globe,
             title: "Kişisel Web Sitesi",
             value: profile?.website,
+            display: profile?.website,
         },
 
         {
+            type: "linkedin",
             icon: FaLinkedin,
             title: "LinkedIn",
             value: profile?.linkedin,
+            display: profile?.linkedin,
         },
 
         {
+            type: "orcid",
             icon: BadgeCheck,
             title: "ORCID",
             value: profile?.orcid,
+            display: profile?.orcid,
         },
 
-    ].filter(link => link.value);
+    ].filter((link) => link.value);
 
     return (
 
@@ -43,61 +90,72 @@ function ProfileLinks({ profile }) {
 
                 </h2>
 
-                {links.length > 0 ? (
+                {
 
-                    <div className="links-list">
+                    links.length > 0 ? (
 
-                        {links.map((link) => {
+                        <div className="links-list">
 
-                            const Icon = link.icon;
+                            {
 
-                            return (
+                                links.map((link) => {
 
-                                <a
-                                    key={link.title}
-                                    href={link.value}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="profile-link-item"
-                                >
+                                    const Icon = link.icon;
 
-                                    <Icon size={20}/>
+                                    return (
 
-                                    <div>
+                                        <a
+                                            key={link.title}
+                                            href={normalizeUrl(
+                                                link.type,
+                                                link.value
+                                            )}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="profile-link-item"
+                                        >
 
-                                        <strong>
+                                            <Icon size={20} />
 
-                                            {link.title}
+                                            <div>
 
-                                        </strong>
+                                                <strong>
 
-                                        <span>
+                                                    {link.title}
 
-                                            {link.value}
+                                                </strong>
 
-                                        </span>
+                                                <span>
 
-                                    </div>
+                                                    {link.display}
 
-                                    <ExternalLink size={16}/>
+                                                </span>
 
-                                </a>
+                                            </div>
 
-                            );
+                                            <ExternalLink size={16} />
 
-                        })}
+                                        </a>
 
-                    </div>
+                                    );
 
-                ) : (
+                                })
 
-                    <p className="empty-text">
+                            }
 
-                        Henüz bağlantı eklenmemiş.
+                        </div>
 
-                    </p>
+                    ) : (
 
-                )}
+                        <p className="empty-text">
+
+                            Henüz bağlantı eklenmemiş.
+
+                        </p>
+
+                    )
+
+                }
 
             </div>
 

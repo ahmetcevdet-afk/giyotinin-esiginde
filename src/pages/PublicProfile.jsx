@@ -1,21 +1,20 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-import { calculateProfileCompletion } from "../utils/profileCompletion";
+import { supabase } from "../lib/supabase";
 
 import ProfileHeader from "../components/Profile/ProfileHeader";
-import ProfileCompletion from "../components/Profile/ProfileCompletion";
 import ProfileStats from "../components/Profile/ProfileStats";
 import ProfileAbout from "../components/Profile/ProfileAbout";
 import ProfileEducation from "../components/Profile/ProfileEducation";
 import ProfileLinks from "../components/Profile/ProfileLinks";
-import ProfileActions from "../components/Profile/ProfileActions";
-
-import { useAuth } from "../contexts/AuthContext";
 
 import "./Profile.css";
 
-function Profile({
+function PublicProfile({
 
     theme,
 
@@ -23,15 +22,59 @@ function Profile({
 
 }) {
 
-    const {
+    const { username } = useParams();
 
-        profile,
+    const [profile, setProfile] = useState(null);
 
-        loading,
+    const [loading, setLoading] = useState(true);
 
-    } = useAuth();
+    const [notFound, setNotFound] = useState(false);
 
-    const completion = calculateProfileCompletion(profile);
+    useEffect(() => {
+
+        async function fetchProfile() {
+
+            setLoading(true);
+
+            setNotFound(false);
+
+            const {
+
+                data,
+
+                error,
+
+            } = await supabase
+
+                .from("profiles")
+
+                .select("*")
+
+                .eq("username", username.toLowerCase())
+
+                .maybeSingle();
+
+            if (error || !data) {
+
+                console.error(error);
+
+                setNotFound(true);
+
+                setLoading(false);
+
+                return;
+
+            }
+
+            setProfile(data);
+
+            setLoading(false);
+
+        }
+
+        fetchProfile();
+
+    }, [username]);
 
     if (loading) {
 
@@ -44,13 +87,54 @@ function Profile({
                     setTheme={setTheme}
                 />
 
-                <main className="container">
+                <main className="container profile-page">
 
                     <p>
 
                         Profil yükleniyor...
 
                     </p>
+
+                </main>
+
+                <Footer
+                    theme={theme}
+                />
+
+            </>
+
+        );
+
+    }
+
+    if (notFound) {
+
+        return (
+
+            <>
+
+                <Navbar
+                    theme={theme}
+                    setTheme={setTheme}
+                />
+
+                <main className="container profile-page">
+
+                    <div className="profile-card">
+
+                        <h2>
+
+                            Kullanıcı Bulunamadı
+
+                        </h2>
+
+                        <p>
+
+                            Aradığınız kullanıcı mevcut değil.
+
+                        </p>
+
+                    </div>
 
                 </main>
 
@@ -80,25 +164,12 @@ function Profile({
                 ========================================== */}
 
                 <ProfileHeader
+
                     profile={profile}
-                    isOwner={true}
+
+                    isOwner={false}
+
                 />
-
-                {/* ==========================================
-                    PROFILE COMPLETION
-                ========================================== */}
-
-                {
-
-                    completion < 100 && (
-
-                        <ProfileCompletion
-                            profile={profile}
-                        />
-
-                    )
-
-                }
 
                 {/* ==========================================
                     STATS
@@ -134,21 +205,6 @@ function Profile({
 
                     </div>
 
-                    <div className="profile-right">
-
-                        <ProfileActions />
-
-                        {/* ======================================
-                            Yakında:
-
-                            <ProfileBadges />
-
-                            <ProfileActivity />
-
-                        ====================================== */}
-
-                    </div>
-
                 </div>
 
             </main>
@@ -168,4 +224,4 @@ function Profile({
 
 }
 
-export default Profile;
+export default PublicProfile;

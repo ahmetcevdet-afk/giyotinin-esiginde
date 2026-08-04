@@ -99,18 +99,22 @@ function UserMenu({
 
                 <div className="user-avatar">
 
-                    {profile?.avatar_url ? (
+                    {
 
-                        <img
-                            src={profile.avatar_url}
-                            alt={fullName}
-                        />
+                        profile?.avatar_url ? (
 
-                    ) : (
+                            <img
+                                src={profile.avatar_url}
+                                alt={fullName}
+                            />
 
-                        initials
+                        ) : (
 
-                    )}
+                            initials
+
+                        )
+
+                    }
 
                 </div>
 
@@ -121,144 +125,172 @@ function UserMenu({
 
             </button>
 
-            {open && (
+            {
 
-                <div className="user-dropdown">
+                open && (
 
-                    <div className="user-profile">
+                    <div className="user-dropdown">
 
-                        <div className="user-avatar large">
-
-                            {profile?.avatar_url ? (
-
-                                <img
-                                    src={profile.avatar_url}
-                                    alt={fullName}
-                                />
-
-                            ) : (
-
-                                initials
-
-                            )}
-
-                        </div>
-
-                        <strong>
-
-                            {fullName}
-
-                        </strong>
-
-                        <span>
-
-                            @{username}
-
-                        </span>
-
-                    </div>
-
-                    <div className="user-progress">
-
-                        <div className="user-progress-top">
-
-                            <span>
-
-                                Profil Tamamlanma
-
-                            </span>
-
-                            <strong>
-
-                                %{completion}
-
-                            </strong>
-
-                        </div>
-
-                        <div className="user-progress-bar">
-
-                            <div
-                                className="user-progress-fill"
-                                style={{
-                                    width: `${completion}%`,
-                                }}
-                            />
-
-                        </div>
-
-                        {completion < 100 && (
+                        <div className="user-profile">
 
                             <Link
-                                to="/profile/edit"
-                                className="complete-profile-link"
+                                to={`/u/${username}`}
                                 onClick={() => setOpen(false)}
+                                className="user-profile-link"
                             >
 
-                                Profili Tamamla →
+                                <div className="user-avatar large">
 
-                            </Link>
+                                    {
 
-                        )}
+                                        profile?.avatar_url ? (
 
-                    </div>
+                                            <img
+                                                src={profile.avatar_url}
+                                                alt={fullName}
+                                            />
 
-                    <div className="user-divider" />
+                                        ) : (
 
-                    {accountLinks.map((item) => {
+                                            initials
 
-                        const Icon = item.icon;
+                                        )
 
-                        return (
+                                    }
 
-                            <Link
-                                key={item.to}
-                                to={item.to}
-                                className="user-link"
-                                onClick={() => setOpen(false)}
-                            >
+                                </div>
 
-                                <Icon size={18} />
+                                <strong>
+
+                                    {fullName}
+
+                                </strong>
 
                                 <span>
 
-                                    {item.title}
+                                    @{username}
 
                                 </span>
 
                             </Link>
 
-                        );
+                        </div>
 
-                    })}
+                        {
 
-                    <div className="user-divider" />
+                            completion < 100 && (
 
-                    <button
-                        type="button"
-                        className="logout-btn"
-                        onClick={async () => {
+                                <>
 
-                            setOpen(false);
+                                    <div className="user-progress">
 
-                            await logout();
+                                        <div className="user-progress-top">
 
-                        }}
-                    >
+                                            <span>
 
-                        <LogOut size={18} />
+                                                Profil Tamamlanma
 
-                        <span>
+                                            </span>
 
-                            Çıkış Yap
+                                            <strong>
 
-                        </span>
+                                                %{completion}
 
-                    </button>
+                                            </strong>
 
-                </div>
+                                        </div>
 
-            )}
+                                        <div className="user-progress-bar">
+
+                                            <div
+                                                className="user-progress-fill"
+                                                style={{
+                                                    width: `${completion}%`,
+                                                }}
+                                            />
+
+                                        </div>
+
+                                        <Link
+                                            to="/profile/edit"
+                                            className="complete-profile-link"
+                                            onClick={() => setOpen(false)}
+                                        >
+
+                                            Profili Tamamla →
+
+                                        </Link>
+
+                                    </div>
+
+                                    <div className="user-divider" />
+
+                                </>
+
+                            )
+
+                        }
+
+                        {
+
+                            accountLinks.map((item) => {
+
+                                const Icon = item.icon;
+
+                                return (
+
+                                    <Link
+                                        key={item.to}
+                                        to={item.to}
+                                        className="user-link"
+                                        onClick={() => setOpen(false)}
+                                    >
+
+                                        <Icon size={18} />
+
+                                        <span>
+
+                                            {item.title}
+
+                                        </span>
+
+                                    </Link>
+
+                                );
+
+                            })
+
+                        }
+
+                        <div className="user-divider" />
+
+                        <button
+                            type="button"
+                            className="logout-btn"
+                            onClick={async () => {
+
+                                setOpen(false);
+
+                                await logout();
+
+                            }}
+                        >
+
+                            <LogOut size={18} />
+
+                            <span>
+
+                                Çıkış Yap
+
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                )
+
+            }
 
         </div>
 

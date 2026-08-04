@@ -1,7 +1,167 @@
+/* ==========================================
+   PROFILE PAGE
+========================================== */
+
 .profile-page{
 
-    padding-top: var(--space-6);
+    padding-top:var(--space-6);
 
-    padding-bottom: var(--space-8);
+    padding-bottom:var(--space-8);
+
+}
+
+
+/* ==========================================
+   MAIN SECTIONS
+========================================== */
+
+.profile-page > section{
+
+    margin-bottom:32px;
+
+}
+
+.profile-page > section:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/* ==========================================
+   LOWER GRID
+========================================== */
+
+.profile-layout{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:32px;
+
+    align-items:start;
+
+}
+
+
+/* ==========================================
+   COLUMNS
+========================================== */
+
+.profile-left,
+
+.profile-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+    min-width:0;
+
+}
+
+.profile-left > *,
+
+.profile-right > *{
+
+    width:100%;
+
+}
+
+
+/* ==========================================
+   RIGHT COLUMN
+========================================== */
+
+.profile-right{
+
+    position:sticky;
+
+    top:96px;
+
+}
+
+
+/* ==========================================
+   SPACER
+========================================== */
+
+.profile-page-spacer{
+
+    height:56px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1200px){
+
+    .profile-layout{
+
+        gap:24px;
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .profile-layout{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .profile-right{
+
+        position:static;
+
+    }
+
+    .profile-page{
+
+        padding-top:var(--space-5);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .profile-page{
+
+        padding-top:var(--space-4);
+
+        padding-bottom:var(--space-6);
+
+    }
+
+    .profile-left,
+
+    .profile-right{
+
+        gap:20px;
+
+    }
+
+    .profile-page > section{
+
+        margin-bottom:24px;
+
+    }
+
+    .profile-page-spacer{
+
+        height:36px;
+
+    }
 
 }

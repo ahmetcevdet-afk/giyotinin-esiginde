@@ -2,6 +2,7 @@ import {
     UserRound,
     MapPin,
     UserPen,
+    GraduationCap,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -10,7 +11,13 @@ import Button from "../Button/Button";
 
 import "./ProfileHeader.css";
 
-function ProfileHeader({ profile }) {
+function ProfileHeader({
+
+    profile,
+
+    isOwner = true,
+
+}) {
 
     const fullName =
         profile?.full_name ||
@@ -20,75 +27,153 @@ function ProfileHeader({ profile }) {
         profile?.username ||
         "username";
 
-    const initials = fullName
-        .split(" ")
-        .map((word) => word[0])
-        .join("")
-        .substring(0, 2)
-        .toUpperCase();
-
     return (
 
         <header className="profile-header">
 
             <div className="profile-card">
 
+                {/* ==========================================
+                    AVATAR
+                ========================================== */}
+
                 <div className="profile-avatar">
 
-                    {profile?.avatar_url ? (
+                    {
 
-                        <img
-                            src={profile.avatar_url}
-                            alt={fullName}
-                        />
+                        profile?.avatar_url ? (
 
-                    ) : (
+                            <img
+                                src={profile.avatar_url}
+                                alt={fullName}
+                            />
 
-                        <UserRound size={42}/>
+                        ) : (
 
-                    )}
+                            <UserRound size={46} />
+
+                        )
+
+                    }
 
                 </div>
 
-                <h1>
+                {/* ==========================================
+                    BİLGİLER
+                ========================================== */}
 
-                    {fullName}
+                <div className="profile-info">
 
-                </h1>
+                    <div className="profile-main">
 
-                <p className="profile-username">
+                        <h1>
 
-                    @{username}
+                            {fullName}
 
-                </p>
+                        </h1>
 
-                {profile?.country && (
+                        <p className="profile-username">
 
-                    <div className="profile-location">
+                            @{username}
 
-                        <MapPin size={16}/>
+                        </p>
 
-                        <span>
+                        {
 
-                            {profile.country}
+                            profile?.country && (
 
-                        </span>
+                                <div className="profile-location">
+
+                                    <MapPin size={16} />
+
+                                    <span>
+
+                                        {profile.country}
+
+                                    </span>
+
+                                </div>
+
+                            )
+
+                        }
+
+                        {
+
+                            (
+
+                                profile?.education_level ||
+
+                                profile?.field
+
+                            ) && (
+
+                                <div className="profile-role">
+
+                                    <GraduationCap size={15} />
+
+                                    <span>
+
+                                        {profile.education_level}
+
+                                        {
+
+                                            profile?.field &&
+
+                                            ` • ${profile.field}`
+
+                                        }
+
+                                    </span>
+
+                                </div>
+
+                            )
+
+                        }
 
                     </div>
 
-                )}
+                    {/* ==========================================
+                        AKSİYONLAR
+                    ========================================== */}
 
-                <Link to="/profile/edit">
+                    <div className="profile-actions">
 
-                    <Button>
+                        {
 
-                        <UserPen size={18}/>
+                            isOwner ? (
 
-                        Profili Düzenle
+                                <Link to="/profile/edit">
 
-                    </Button>
+                                    <Button>
 
-                </Link>
+                                        <UserPen size={18} />
+
+                                        Profili Düzenle
+
+                                    </Button>
+
+                                </Link>
+
+                            ) : (
+
+                                <>
+                                    {/* Yakında:
+                                        <Button>Takip Et</Button>
+                                        <Button variant="secondary">
+                                            Mesaj Gönder
+                                        </Button>
+                                    */}
+                                </>
+
+                            )
+
+                        }
+
+                    </div>
+
+                </div>
 
             </div>
 

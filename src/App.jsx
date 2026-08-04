@@ -22,6 +22,7 @@ import Terms from "./pages/Terms";
 import EmailConfirmed from "./pages/EmailConfirmed";
 import Profile from "./pages/Profile"
 import EditProfile from "./pages/EditProfile";
+import PublicProfile from "./pages/PublicProfile"
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -98,6 +99,15 @@ function App() {
         <ProtectedRoute>
             <EditProfile {...pageProps} />
         </ProtectedRoute>
+    }
+/>
+<Route
+    path="/u/:username"
+    element={
+        <PublicProfile
+            theme={theme}
+            setTheme={setTheme}
+        />
     }
 />
 <Route
