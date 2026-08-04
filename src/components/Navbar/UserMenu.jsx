@@ -3,22 +3,36 @@ import { ChevronDown, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { accountLinks } from "./navbarData";
+import { calculateProfileCompletion } from "../../utils/profileCompletion";
 
 import "./UserMenu.css";
 
-function UserMenu({ user, logout }) {
+function UserMenu({
+
+    user,
+
+    profile,
+
+    logout,
+
+}) {
 
     const [open, setOpen] = useState(false);
 
     const menuRef = useRef(null);
 
     const username =
-        user?.user_metadata?.username ||
+
+        profile?.username ||
+
         user?.email?.split("@")[0] ||
+
         "";
 
     const fullName =
-        user?.user_metadata?.full_name ||
+
+        profile?.full_name ||
+
         username;
 
     const initials = fullName
@@ -28,15 +42,18 @@ function UserMenu({ user, logout }) {
         .substring(0, 2)
         .toUpperCase();
 
-    const completion = 40;
+    const completion = calculateProfileCompletion(profile);
 
     useEffect(() => {
 
         function handleClick(event) {
 
             if (
+
                 menuRef.current &&
+
                 !menuRef.current.contains(event.target)
+
             ) {
 
                 setOpen(false);
@@ -45,12 +62,22 @@ function UserMenu({ user, logout }) {
 
         }
 
-        document.addEventListener("mousedown", handleClick);
+        document.addEventListener(
+
+            "mousedown",
+
+            handleClick
+
+        );
 
         return () =>
+
             document.removeEventListener(
+
                 "mousedown",
+
                 handleClick
+
             );
 
     }, []);
@@ -72,7 +99,18 @@ function UserMenu({ user, logout }) {
 
                 <div className="user-avatar">
 
-                    {initials}
+                    {profile?.avatar_url ? (
+
+                        <img
+                            src={profile.avatar_url}
+                            alt={fullName}
+                        />
+
+                    ) : (
+
+                        initials
+
+                    )}
 
                 </div>
 
@@ -91,7 +129,18 @@ function UserMenu({ user, logout }) {
 
                         <div className="user-avatar large">
 
-                            {initials}
+                            {profile?.avatar_url ? (
+
+                                <img
+                                    src={profile.avatar_url}
+                                    alt={fullName}
+                                />
+
+                            ) : (
+
+                                initials
+
+                            )}
 
                         </div>
 
@@ -106,11 +155,6 @@ function UserMenu({ user, logout }) {
                             @{username}
 
                         </span>
-
-                        {/* İleride kullanırız */}
-                        {/* <div className="user-badge">
-                            Araştırmacı
-                        </div> */}
 
                     </div>
 
@@ -143,15 +187,19 @@ function UserMenu({ user, logout }) {
 
                         </div>
 
-                        <Link
-                            to="/complete-profile"
-                            className="complete-profile-link"
-                            onClick={() => setOpen(false)}
-                        >
+                        {completion < 100 && (
 
-                            Profili Tamamla →
+                            <Link
+                                to="/profile/edit"
+                                className="complete-profile-link"
+                                onClick={() => setOpen(false)}
+                            >
 
-                        </Link>
+                                Profili Tamamla →
+
+                            </Link>
+
+                        )}
 
                     </div>
 

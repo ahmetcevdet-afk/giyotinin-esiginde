@@ -22,6 +22,7 @@
     --warning: #D39A2D;
     --danger: #C44536;
 
+    color-scheme: light;
 
     /* ==========================================
        TYPOGRAPHY
@@ -30,28 +31,26 @@
     --font-heading: "Cormorant Garamond", serif;
     --font-body: "Inter", sans-serif;
 
-    --font-size-xs: 0.75rem;      /* 12px */
-    --font-size-sm: 0.875rem;     /* 14px */
-    --font-size-md: 1rem;         /* 16px */
-    --font-size-lg: 1.125rem;     /* 18px */
-    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-xs: .75rem;
+    --font-size-sm: .875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
 
     --line-height: 1.7;
 
-
     /* ==========================================
-       SPACING (8px System)
+       SPACING
     ========================================== */
 
-    --space-1: 0.5rem;      /* 8px */
-    --space-2: 1rem;        /* 16px */
-    --space-3: 1.5rem;      /* 24px */
-    --space-4: 2rem;        /* 32px */
-    --space-5: 3rem;        /* 48px */
-    --space-6: 4rem;        /* 64px */
-    --space-7: 5rem;        /* 80px */
-    --space-8: 6rem;        /* 96px */
-
+    --space-1: .5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 5rem;
+    --space-8: 6rem;
 
     /* ==========================================
        BORDER RADIUS
@@ -63,24 +62,21 @@
     --radius-xl: 28px;
     --radius-full: 999px;
 
-
     /* ==========================================
        SHADOWS
     ========================================== */
 
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.12);
-
+    --shadow-sm: 0 4px 12px rgba(0,0,0,.05);
+    --shadow-md: 0 10px 24px rgba(0,0,0,.08);
+    --shadow-lg: 0 18px 40px rgba(0,0,0,.12);
 
     /* ==========================================
        TRANSITIONS
     ========================================== */
 
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
-
+    --transition-fast: .2s ease;
+    --transition-normal: .3s ease;
+    --transition-slow: .5s ease;
 
     /* ==========================================
        LAYOUT
@@ -90,6 +86,11 @@
     --navbar-height: 90px;
 
 }
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
 :root.dark {
 
     --background: #111111;
@@ -110,33 +111,7 @@
     --success: #6FCF97;
     --warning: #F2C94C;
     --danger: #EB5757;
-}
-html{
 
-    background:var(--background);
-
-    color:var(--text);
-
-}
-
-body{
-
-    margin:0;
-
-    background:var(--background);
-
-    color:var(--text);
-
-    transition:
-        background .25s ease,
-        color .25s ease;
-
-}
-
-#root{
-
-    min-height:100vh;
-
-    background:var(--background);
+    color-scheme: dark;
 
 }

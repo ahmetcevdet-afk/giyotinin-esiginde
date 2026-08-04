@@ -1,0 +1,193 @@
+.guest-cta{
+
+    padding:120px 0;
+
+}
+
+.guest-cta-content{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.guest-cta-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 18px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:var(--surface-alt);
+
+    border:1px solid var(--border);
+
+    color:var(--accent);
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.guest-cta h2{
+
+    font-family:var(--font-heading);
+
+    font-size:clamp(2.6rem,5vw,4rem);
+
+    color:var(--text);
+
+    margin-bottom:22px;
+
+}
+
+.guest-cta p{
+
+    max-width:650px;
+
+    margin:0 auto 42px;
+
+    color:var(--text-light);
+
+    font-size:1.08rem;
+
+    line-height:1.8;
+
+}
+
+.guest-cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.guest-secondary{
+
+    color:var(--accent);
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.guest-secondary:hover{
+
+    opacity:.8;
+
+}
+
+.guest-cta-features{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+.guest-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    transition:.25s;
+
+}
+
+.guest-feature svg{
+
+    color:var(--success);
+
+    flex-shrink:0;
+
+}
+
+.guest-feature small{
+
+    margin-left:4px;
+
+    color:var(--text-light);
+
+    font-size:.78rem;
+
+}
+
+.guest-feature:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+@media(max-width:768px){
+
+    .guest-cta{
+
+        padding:90px 0;
+
+    }
+
+    .guest-cta-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .guest-cta-features{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .guest-feature{
+
+        justify-content:center;
+
+    }
+
+}

@@ -1,0 +1,109 @@
+/* ==========================================
+   PROFILE EDUCATION
+========================================== */
+
+.profile-education{
+
+    margin-top:32px;
+
+}
+
+.profile-education .profile-card{
+
+    padding:28px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+}
+
+.profile-education h2{
+
+    margin-bottom:24px;
+
+    font-family:var(--font-heading);
+
+    font-size:1.8rem;
+
+    color:var(--text);
+
+}
+
+.education-list{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.education-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    padding:16px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--background);
+
+    transition:var(--transition-fast);
+
+}
+
+.education-item:hover{
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.education-item svg{
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+    margin-top:2px;
+
+}
+
+.education-item strong{
+
+    display:block;
+
+    margin-bottom:4px;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+}
+
+.education-item span{
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
+}
+
+@media(max-width:768px){
+
+    .profile-education .profile-card{
+
+        padding:22px;
+
+    }
+
+}

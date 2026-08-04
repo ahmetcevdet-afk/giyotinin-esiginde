@@ -19,17 +19,33 @@ function Navbar({ theme, setTheme }) {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const { user, logout } = useAuth();
+    const {
+
+        user,
+
+        profile,
+
+        logout,
+
+    } = useAuth();
 
     const currentLogo =
+
         theme === "dark"
+
             ? logoDark
+
             : logoLight;
 
     useEffect(() => {
 
         document.body.style.overflow =
-            menuOpen ? "hidden" : "auto";
+
+            menuOpen
+
+                ? "hidden"
+
+                : "auto";
 
         return () => {
 
@@ -47,16 +63,20 @@ function Navbar({ theme, setTheme }) {
 
     function toggleMenu() {
 
-        setMenuOpen(prev => !prev);
+        setMenuOpen((prev) => !prev);
 
     }
 
     function toggleTheme() {
 
-        setTheme(prev =>
+        setTheme((prev) =>
+
             prev === "light"
+
                 ? "dark"
+
                 : "light"
+
         );
 
     }
@@ -100,55 +120,66 @@ function Navbar({ theme, setTheme }) {
                             aria-label="Tema Değiştir"
                         >
 
-                            {theme === "light"
+                            {
 
-                                ? <Moon size={18}/>
+                                theme === "light"
 
-                                : <Sun size={18}/>
+                                    ? <Moon size={18} />
+
+                                    : <Sun size={18} />
 
                             }
 
                         </button>
 
-                        {user ? (
+                        {
 
-                            <UserMenu
-                                user={user}
-                                logout={logout}
-                            />
+                            user ? (
 
-                        ) : (
+                                <UserMenu
 
-                            <>
+                                    user={user}
 
-                                <Link to="/login">
+                                    profile={profile}
 
-                                    <Button
-                                        variant="secondary"
-                                        size="sm"
-                                    >
+                                    logout={logout}
 
-                                        Giriş Yap
+                                />
 
-                                    </Button>
+                            ) : (
 
-                                </Link>
+                                <>
 
-                                <Link to="/register">
+                                    <Link to="/login">
 
-                                    <Button
-                                        size="sm"
-                                    >
+                                        <Button
+                                            variant="secondary"
+                                            size="sm"
+                                        >
 
-                                        Kayıt Ol
+                                            Giriş Yap
 
-                                    </Button>
+                                        </Button>
 
-                                </Link>
+                                    </Link>
 
-                            </>
+                                    <Link to="/register">
 
-                        )}
+                                        <Button
+                                            size="sm"
+                                        >
+
+                                            Kayıt Ol
+
+                                        </Button>
+
+                                    </Link>
+
+                                </>
+
+                            )
+
+                        }
 
                     </div>
 
@@ -158,11 +189,13 @@ function Navbar({ theme, setTheme }) {
                         aria-label="Mobil Menü"
                     >
 
-                        {menuOpen
+                        {
 
-                            ? <X size={28}/>
+                            menuOpen
 
-                            : <Menu size={28}/>
+                                ? <X size={28} />
+
+                                : <Menu size={28} />
 
                         }
 
@@ -178,12 +211,21 @@ function Navbar({ theme, setTheme }) {
             />
 
             <MobileDrawer
+
                 menuOpen={menuOpen}
+
                 closeMenu={closeMenu}
+
                 theme={theme}
+
                 toggleTheme={toggleTheme}
+
                 user={user}
+
+                profile={profile}
+
                 logout={logout}
+
             />
 
         </>

@@ -20,6 +20,8 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import EmailConfirmed from "./pages/EmailConfirmed";
+import Profile from "./pages/Profile"
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -82,7 +84,22 @@ function App() {
     path="/privacy"
     element={<PrivacyPolicy />}
 />
-
+<Route
+    path="/profile"
+    element={
+        <ProtectedRoute>
+            <Profile {...pageProps} />
+        </ProtectedRoute>
+    }
+/>
+<Route
+    path="/profile/edit"
+    element={
+        <ProtectedRoute>
+            <EditProfile {...pageProps} />
+        </ProtectedRoute>
+    }
+/>
 <Route
     path="/terms"
     element={<Terms />}
@@ -94,5 +111,6 @@ function App() {
     </AuthProvider>
   );
 }
+
 
 export default App;

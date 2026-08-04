@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "./NotFound.css";
+import Button from "../components/Button/Button";
 
 function NotFound() {
     return (
@@ -15,8 +16,10 @@ function NotFound() {
                 veya hiç var olmamış olabilir.
             </p>
 
-            <Link to="/" className="back-home">
-                Ana Sayfaya Dön
+            <Link to="/">
+                <Button variant="secondary">
+                    Ana Sayfaya Dön
+                </Button>
             </Link>
 
         </main>

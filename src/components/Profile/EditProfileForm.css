@@ -1,0 +1,241 @@
+/* ==========================================
+   FORM
+========================================== */
+
+.edit-profile-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:32px;
+
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.edit-profile-form .profile-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    padding:32px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+
+}
+
+.edit-profile-form .profile-card:hover{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(245,234,180,.25),
+        var(--shadow-md);
+
+    transform:translateY(-2px);
+
+}
+
+.edit-profile-form h2{
+
+    font-family:var(--font-heading);
+
+    font-size:2rem;
+
+    color:var(--text);
+
+    margin-bottom:8px;
+
+}
+
+
+/* ==========================================
+   LABELS
+========================================== */
+
+.edit-profile-form label{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.edit-profile-form input,
+.edit-profile-form textarea,
+.edit-profile-form select{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    font-size:.96rem;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+.edit-profile-form textarea{
+
+    resize:vertical;
+
+    min-height:150px;
+
+}
+
+.edit-profile-form input::placeholder,
+.edit-profile-form textarea::placeholder{
+
+    color:var(--text-muted);
+
+}
+
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.edit-profile-form input:focus,
+.edit-profile-form textarea:focus,
+.edit-profile-form select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(245,234,180,.18);
+
+}
+
+
+/* ==========================================
+   SELECT
+========================================== */
+
+.edit-profile-form select{
+
+    cursor:pointer;
+
+    appearance:none;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%238B8B8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 8 10 12 14 8'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-position:right 16px center;
+
+    background-size:16px;
+
+    padding-right:46px;
+
+}
+
+
+/* ==========================================
+   HELP TEXT
+========================================== */
+
+.edit-profile-form small{
+
+    margin-top:-6px;
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================
+   SAVE BUTTON
+========================================== */
+
+.edit-profile-form .button{
+
+    align-self:flex-end;
+
+    min-width:230px;
+
+}
+
+.edit-profile-form .button svg{
+
+    margin-right:8px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .edit-profile-form{
+
+        gap:24px;
+
+    }
+
+    .edit-profile-form .profile-card{
+
+        padding:24px;
+
+    }
+
+    .edit-profile-form h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .edit-profile-form .button{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

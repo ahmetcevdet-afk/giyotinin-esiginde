@@ -1,0 +1,109 @@
+/* ==========================================
+   PROFILE ACTIONS
+========================================== */
+
+.profile-actions{
+
+    margin-top:32px;
+
+}
+
+.profile-actions .profile-card{
+
+    padding:28px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+}
+
+.profile-actions h2{
+
+    margin-bottom:22px;
+
+    font-family:var(--font-heading);
+
+    font-size:1.8rem;
+
+    color:var(--text);
+
+}
+
+.profile-actions-grid{
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+.profile-action{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    color:var(--text);
+
+    background:var(--background);
+
+    transition:var(--transition-fast);
+
+}
+
+.profile-action:hover{
+
+    transform:translateY(-2px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.profile-action svg{
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.profile-action strong{
+
+    display:block;
+
+    margin-bottom:4px;
+
+    font-size:1rem;
+
+}
+
+.profile-action span{
+
+    color:var(--text-light);
+
+    font-size:.9rem;
+
+}
+
+@media(max-width:768px){
+
+    .profile-action{
+
+        padding:16px;
+
+    }
+
+}

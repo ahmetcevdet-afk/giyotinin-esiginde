@@ -1,0 +1,133 @@
+.member-cta{
+
+    padding:120px 0;
+
+}
+
+.member-cta-content{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.member-cta-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 18px;
+
+    margin-bottom:24px;
+
+    border-radius:999px;
+
+    background:var(--surface-alt);
+
+    border:1px solid var(--border);
+
+    color:var(--accent);
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.member-cta h2{
+
+    font-family:var(--font-heading);
+
+    font-size:clamp(2.6rem,5vw,4rem);
+
+    color:var(--text);
+
+    margin-bottom:20px;
+
+}
+
+.member-cta p{
+
+    max-width:650px;
+
+    margin:0 auto 42px;
+
+    color:var(--text-light);
+
+    font-size:1.08rem;
+
+    line-height:1.8;
+
+}
+
+.member-cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.member-cta-actions .button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.member-shortcuts{
+
+    margin-top:36px;
+
+}
+
+.member-shortcuts a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--accent);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.member-shortcuts a:hover{
+
+    text-decoration:underline;
+
+}
+
+@media(max-width:768px){
+
+    .member-cta{
+
+        padding:90px 0;
+
+    }
+
+    .member-cta-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+}
