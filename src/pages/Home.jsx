@@ -140,7 +140,8 @@ function Home({ theme, setTheme }) {
         </section>
       </main>
       <CTA />
-      <Footer />
+      <Footer
+      theme={theme} />
     </>
   );
 }

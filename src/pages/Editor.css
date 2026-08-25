@@ -1,0 +1,381 @@
+.editor-page{
+
+    padding-top:var(--space-8);
+
+    padding-bottom:var(--space-8);
+
+}
+
+.editor-header{
+
+    margin-bottom:32px;
+
+}
+
+.editor-header h1{
+
+    margin:8px 0;
+
+    font-family:var(--font-heading);
+
+}
+
+.editor-header p{
+
+    color:var(--text-light);
+
+}
+
+.editor-card{
+
+    width:min(900px,100%);
+
+    margin:0 auto;
+
+    padding:36px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+}
+
+.editor-field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-bottom:24px;
+
+}
+
+.editor-field label{
+
+    font-weight:600;
+
+}
+
+.editor-field input,
+.editor-field textarea,
+.editor-field select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font:inherit;
+
+    outline:none;
+
+    transition:var(--transition-fast);
+
+}
+
+.editor-field input:focus,
+.editor-field textarea:focus,
+.editor-field select:focus{
+
+    border-color:var(--primary);
+
+}
+
+.editor-field textarea{
+
+    resize:vertical;
+
+    line-height:1.7;
+
+}
+
+.editor-content{
+
+    min-height:500px;
+
+}
+
+.editor-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.editor-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    padding-top:12px;
+
+    border-top:1px solid var(--border);
+
+}
+
+@media(max-width:700px){
+
+    .editor-card{
+
+        padding:22px;
+
+    }
+
+    .editor-row{
+
+        grid-template-columns:1fr;
+
+        gap:0;
+
+    }
+
+    .editor-actions{
+
+        flex-direction:column;
+
+    }
+
+}
+/* =========================================================
+   FILE UPLOAD
+========================================================= */
+
+.editor-upload{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border:1px dashed var(--border);
+
+    border-radius:12px;
+
+    background:var(--background);
+
+    color:var(--text-light);
+
+    cursor:pointer;
+
+    transition:var(--transition-fast);
+
+}
+
+.editor-upload:hover{
+
+    border-color:var(--primary);
+
+    color:var(--text);
+
+    background:var(--surface);
+
+}
+
+.editor-upload svg{
+
+    flex-shrink:0;
+
+    color:var(--primary);
+
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.editor-field select{
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   FILE PREVIEW
+========================================================= */
+
+.editor-file-preview{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:10px;
+
+    padding:12px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--background);
+
+}
+
+.editor-file-preview svg{
+
+    flex-shrink:0;
+
+    color:var(--primary);
+
+}
+
+.editor-file-preview span{
+
+    flex:1;
+
+    min-width:0;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    color:var(--text-light);
+
+}
+
+.editor-file-preview button{
+
+    display:grid;
+
+    place-items:center;
+
+    width:30px;
+
+    height:30px;
+
+    padding:0;
+
+    border:0;
+
+    border-radius:7px;
+
+    background:transparent;
+
+    color:var(--text-light);
+
+    cursor:pointer;
+
+    transition:var(--transition-fast);
+
+}
+
+.editor-file-preview button:hover{
+
+    background:var(--border);
+
+    color:var(--text);
+
+}
+
+
+/* =========================================================
+   PUBLISH INFO
+========================================================= */
+
+.editor-submit-info{
+
+    margin-top:8px;
+
+    margin-bottom:24px;
+
+    padding:18px 20px;
+
+    border-left:3px solid var(--primary);
+
+    border-radius:0 10px 10px 0;
+
+    background:var(--background);
+
+}
+
+.editor-submit-info strong{
+
+    display:block;
+
+    margin-bottom:6px;
+
+}
+
+.editor-submit-info p{
+
+    margin:0;
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+    font-size:.95rem;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.editor-actions{
+
+    align-items:center;
+
+}
+
+.editor-actions button{
+
+    min-height:46px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .editor-upload{
+
+        padding:16px;
+
+    }
+
+    .editor-file-preview{
+
+        padding:10px 12px;
+
+    }
+
+    .editor-submit-info{
+
+        padding:16px;
+
+    }
+
+}

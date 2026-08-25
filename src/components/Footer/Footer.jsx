@@ -10,10 +10,19 @@ import { Mail, Scale } from "lucide-react";
 import {
     FaInstagram,
     FaYoutube,
-    FaXTwitter
+    FaXTwitter,
 } from "react-icons/fa6";
 
 function Footer({ theme }) {
+
+    /*
+        logo-light.png = SİYAH LOGO
+        logo-dark.png  = BEYAZ LOGO
+
+        Bu yüzden:
+        light tema → logo-light
+        dark tema  → logo-dark
+    */
 
     const currentLogo =
         theme === "dark"
@@ -28,7 +37,9 @@ function Footer({ theme }) {
 
                 <div className="footer-grid">
 
-                    {/* Brand */}
+                    {/* ==========================================
+                        BRAND
+                    ========================================== */}
 
                     <div className="footer-brand-column">
 
@@ -73,7 +84,7 @@ function Footer({ theme }) {
 
                         <div className="footer-status">
 
-                            <span className="status-dot"/>
+                            <span className="status-dot" />
 
                             <p>
 
@@ -82,6 +93,10 @@ function Footer({ theme }) {
                             </p>
 
                         </div>
+
+                        {/* ==========================================
+                            SOCIALS
+                        ========================================== */}
 
                         <div className="footer-socials">
 
@@ -92,7 +107,7 @@ function Footer({ theme }) {
                                 aria-label="X"
                             >
 
-                                <FaXTwitter/>
+                                <FaXTwitter />
 
                             </a>
 
@@ -103,7 +118,7 @@ function Footer({ theme }) {
                                 aria-label="Instagram"
                             >
 
-                                <FaInstagram/>
+                                <FaInstagram />
 
                             </a>
 
@@ -114,7 +129,7 @@ function Footer({ theme }) {
                                 aria-label="YouTube"
                             >
 
-                                <FaYoutube/>
+                                <FaYoutube />
 
                             </a>
 
@@ -122,57 +137,65 @@ function Footer({ theme }) {
 
                     </div>
 
-                    {/* Platform */}
+                    {/* ==========================================
+                        PLATFORM
+                    ========================================== */}
 
                     <div className="footer-column">
 
                         <h4>Platform</h4>
 
-                        <Link to="/">Ana Sayfa</Link>
+                        <Link to="/">
+                            Ana Sayfa
+                        </Link>
 
-                        <Link to="/articles">Araştırmalar</Link>
+                        <Link to="/articles">
+                            Araştırmalar
+                        </Link>
 
-                        <Link to="/categories">Kategoriler</Link>
+                        <Link to="/categories">
+                            Kategoriler
+                        </Link>
 
-                        <Link to="/authors">Yazarlar</Link>
+                        <Link to="/authors">
+                            Yazarlar
+                        </Link>
 
-                        <Link to="/about">Hakkımızda</Link>
+                        <Link to="/about">
+                            Hakkımızda
+                        </Link>
 
                     </div>
 
-                    {/* Kaynaklar */}
+                    {/* ==========================================
+                        KAYNAKLAR
+                    ========================================== */}
 
                     <div className="footer-column">
 
                         <h4>Kaynaklar</h4>
 
                         <Link to="/publishing">
-
                             Yayın İlkeleri
-
                         </Link>
 
                         <Link to="/terms">
-
                             Kullanım Koşulları
-
                         </Link>
 
                         <Link to="/privacy">
-
                             Gizlilik Politikası
-
                         </Link>
 
                         <Link to="/cookies">
-
                             Çerez Politikası
-
                         </Link>
 
                     </div>
 
-                    {/* İletişim */}
+                    {/* ==========================================
+                        İLETİŞİM
+                    ========================================== */}
 
                     <div className="footer-column">
 
@@ -180,24 +203,20 @@ function Footer({ theme }) {
 
                         <p>
 
-                            <Mail size={16}/>
+                            <Mail size={16} />
 
                             <span>
-
                                 info@giyotininesiginde.com
-
                             </span>
 
                         </p>
 
                         <p>
 
-                            <Scale size={16}/>
+                            <Scale size={16} />
 
                             <span>
-
                                 legal@giyotininesiginde.com
-
                             </span>
 
                         </p>
@@ -206,7 +225,7 @@ function Footer({ theme }) {
 
                 </div>
 
-                <div className="footer-divider"/>
+                <div className="footer-divider" />
 
                 <div className="footer-bottom">
 
@@ -233,4 +252,4 @@ function Footer({ theme }) {
 
 }
 
-export default Footer;
+export default Footer;  

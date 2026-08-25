@@ -23,6 +23,10 @@ import EmailConfirmed from "./pages/EmailConfirmed";
 import Profile from "./pages/Profile"
 import EditProfile from "./pages/EditProfile";
 import PublicProfile from "./pages/PublicProfile"
+import Editor from "./pages/Editor";
+import Article from "./pages/Article";
+import EditorPanel from "./pages/EditorPanel";
+import EditorArticleReview from "./pages/EditorArticleReview";
 
 function App() {
   const [theme, setTheme] = useState(() => {
@@ -113,6 +117,43 @@ function App() {
 <Route
     path="/terms"
     element={<Terms />}
+/>
+<Route
+    path="/editor"
+    element={
+        <Editor
+            theme={theme}
+            setTheme={setTheme}
+        />
+    }
+/>
+
+<Route
+    path="/articles/:slug"
+    element={
+        <Article
+            theme={theme}
+            setTheme={setTheme}
+        />
+    }
+/>
+<Route
+    path="/editor-panel"
+    element={
+        <EditorPanel
+            theme={theme}
+            setTheme={setTheme}
+        />
+    }
+/>
+<Route
+    path="/editor-panel/articles/:id"
+    element={
+        <EditorArticleReview
+            theme={theme}
+            setTheme={setTheme}
+        />
+    }
 />
 
         </Routes>
